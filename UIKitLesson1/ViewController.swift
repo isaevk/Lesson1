@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+final class ViewController: UIViewController {
     
     let sayNameAllert = UIAlertController()
     let sumButton = UIButton()
@@ -15,13 +15,13 @@ class ViewController: UIViewController {
     
     
     let nameLabel = UILabel()
-    var resultSumLabel = UILabel()
+    let resultSumLabel = UILabel()
     let guessNumberLabel = UILabel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = #colorLiteral(red: 0.5843137503, green: 0.8235294223, blue: 0.4196078479, alpha: 1)
+        view.backgroundColor = #colorLiteral(red: 0.5843137503, green: 0.8235294223, blue: 0.4196078479, alpha: 1)
         
         nameAlert(title: "Hello!", message: "Type your name", style: .alert)
         
@@ -59,12 +59,12 @@ class ViewController: UIViewController {
         let alertController = UIAlertController(title: "I can add up",
                                                 message: "Enter two numbers",
                                                 preferredStyle: .alert)
-        let action = UIAlertAction(title: "Add up", style: .default) { (action) in
-            let text = alertController.textFields?.first?.text
-            let text2 = alertController.textFields?.last?.text
+        let action = UIAlertAction(title: "Add up", style: .default) { action in
+            let textFieldOne = alertController.textFields?.first?.text
+            let textFieldTwo = alertController.textFields?.last?.text
             
-            if text != nil, text2 != nil  {
-                self.resultSumLabel.text! += String(Int(text!)! + Int(text2!)!)
+            if let textOne = textFieldOne, let textTwo = textFieldTwo  {
+                self.resultSumLabel.text! += String(Int(textOne)! + Int(textTwo)!)
             } else {
                 self.resultSumLabel.text! += "Enter the number"
             }
@@ -111,13 +111,13 @@ class ViewController: UIViewController {
         let action = UIAlertAction(title: "Guess at", style: .default) { (action) in
             let text = alertController.textFields?.first
             
-            if Int(text!.text!) == nil {
-                self.guessNumberLabel.text! += "Enter the number"
+            if Int((text?.text)!) == nil {
+                self.guessNumberLabel.text? += "Enter the number"
             }
-            if number == Int(text!.text!)!  {
-                self.guessNumberLabel.text! += "YES"
+            if number == Int((text?.text)!)  {
+                self.guessNumberLabel.text? += "YES"
             } else {
-                self.guessNumberLabel.text! += "NO"
+                self.guessNumberLabel.text? += "NO"
             }
         }
         alertController.addTextField() { (textField) in
