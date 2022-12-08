@@ -9,7 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-  var rev = Rev()
+  var rev = ReverseredWord()
     
     let button = UIButton()
     let label = UILabel()

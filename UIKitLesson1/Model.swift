@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Rev {
+struct ReverseredWord {
      func rev(word: String) -> String? {
          let word1 = String(word.reversed())
         return word1
