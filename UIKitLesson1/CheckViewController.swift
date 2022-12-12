@@ -9,38 +9,32 @@ import UIKit
 
 final class CheckViewController: UIViewController {
     
-    @IBOutlet weak var txtName: UILabel!
+    @IBOutlet private var txtName: UILabel!
     
-    @IBOutlet weak var txtNum: UILabel!
+    @IBOutlet private var txtNum: UILabel!
     
-    @IBOutlet weak var txtTable: UILabel!
+    @IBOutlet private var txtTable: UILabel!
     
-    @IBOutlet weak var txtBooked: UILabel!
+    @IBOutlet private var txtBooked: UILabel!
     
-    @IBOutlet weak var txtPrepay: UILabel!
+    @IBOutlet private var txtPrepay: UILabel!
     
-    @IBOutlet weak var txtVip: UILabel!
+    @IBOutlet private var txtVip: UILabel!
     
-    var name = ""
-    var guests = ""
-    var table = ""
-    var booked = ""
-    var prepay = ""
-    var vip = ""
-    
+
+    var checkInfo = CheckInfo()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        txtName.text = "Full name: \(name)"
-        txtNum.text = "Number of guests: \(guests)"
-        txtTable.text = "Number of table: \(table)"
-        txtBooked.text = "Booked? - \(booked)"
-        txtPrepay.text = "Prepayment? - \(prepay)"
-        txtVip.text = "VIP room? - \(vip)"
+        txtName.text = "\(checkInfo.name)"
+        txtNum.text = "\(checkInfo.guests)"
+        txtTable.text = "\(checkInfo.table)"
+        txtBooked.text = "\(checkInfo.booked)"
+        txtPrepay.text = "\(checkInfo.prepay)"
+        txtVip.text = "\(checkInfo.vip)"
     }
-    
-    
+
     
     
     

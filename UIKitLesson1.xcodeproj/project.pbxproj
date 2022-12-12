@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		181D5FE7294726AF001E0F39 /* HideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181D5FE6294726AF001E0F39 /* HideKeyboard.swift */; };
+		181D5FE929474BB4001E0F39 /* CheckInfoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181D5FE829474BB4001E0F39 /* CheckInfoData.swift */; };
 		18F8693A29421384005651F4 /* InfoGoastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F8693929421384005651F4 /* InfoGoastViewController.swift */; };
 		18F8693C294213F7005651F4 /* CheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F8693B294213F7005651F4 /* CheckViewController.swift */; };
 		BD505D84293F59580041DC37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD505D83293F59580041DC37 /* AppDelegate.swift */; };
@@ -18,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		181D5FE6294726AF001E0F39 /* HideKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideKeyboard.swift; sourceTree = "<group>"; };
+		181D5FE829474BB4001E0F39 /* CheckInfoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInfoData.swift; sourceTree = "<group>"; };
 		18F8693929421384005651F4 /* InfoGoastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoGoastViewController.swift; sourceTree = "<group>"; };
 		18F8693B294213F7005651F4 /* CheckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckViewController.swift; sourceTree = "<group>"; };
 		BD505D80293F59580041DC37 /* UIKitLesson1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKitLesson1.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,8 +67,10 @@
 				BD505D83293F59580041DC37 /* AppDelegate.swift */,
 				BD505D85293F59580041DC37 /* SceneDelegate.swift */,
 				BD505D87293F59580041DC37 /* ViewController.swift */,
+				181D5FE6294726AF001E0F39 /* HideKeyboard.swift */,
 				18F8693929421384005651F4 /* InfoGoastViewController.swift */,
 				18F8693B294213F7005651F4 /* CheckViewController.swift */,
+				181D5FE829474BB4001E0F39 /* CheckInfoData.swift */,
 				BD505D89293F59580041DC37 /* Main.storyboard */,
 				BD505D8C293F59590041DC37 /* Assets.xcassets */,
 				BD505D8E293F59590041DC37 /* LaunchScreen.storyboard */,
@@ -145,9 +151,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD505D88293F59580041DC37 /* ViewController.swift in Sources */,
+				181D5FE929474BB4001E0F39 /* CheckInfoData.swift in Sources */,
 				18F8693A29421384005651F4 /* InfoGoastViewController.swift in Sources */,
 				BD505D84293F59580041DC37 /* AppDelegate.swift in Sources */,
 				18F8693C294213F7005651F4 /* CheckViewController.swift in Sources */,
+				181D5FE7294726AF001E0F39 /* HideKeyboard.swift in Sources */,
 				BD505D86293F59580041DC37 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

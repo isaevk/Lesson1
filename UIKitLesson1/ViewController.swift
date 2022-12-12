@@ -9,10 +9,10 @@ import UIKit
 
 final class ViewController: UIViewController {
     
-    @IBOutlet weak var textEmail: UITextField!
-    @IBOutlet weak var textPassword: UITextField!
-    @IBOutlet weak var eyeButton: UIImageView!
-    @IBOutlet weak var warningLabel: UILabel!
+    @IBOutlet private var textEmail: UITextField!
+    @IBOutlet private var textPassword: UITextField!
+    @IBOutlet private var eyeButton: UIImageView!
+    @IBOutlet private var warningLabel: UILabel!
     
     
     override func viewDidLoad() {
@@ -21,11 +21,11 @@ final class ViewController: UIViewController {
     }
     
     @IBAction func singButton(_ sender: Any) {
-        guard let _ = textEmail.text, textEmail.text?.count != 0 else {
+        guard textEmail.text?.count != 0 else {
             warningLabel.text = "Please enter email"
             return
         }
-        guard let _ = textPassword.text, textPassword.text?.count != 0 else {
+        guard textPassword.text?.count != 0 else {
             warningLabel.text = "Please enter password"
             return
         }
@@ -55,13 +55,3 @@ final class ViewController: UIViewController {
     
 }
 
-extension UIViewController {
-    func hideKeyboardWhenTappedAround() {
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
-        view.addGestureRecognizer(tap)
-    }
-    
-    @objc func dismissKeyboard() {
-        view.endEditing(true)
-    }
-}
