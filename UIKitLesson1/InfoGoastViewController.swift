@@ -22,13 +22,18 @@ final class InfoGoastViewController: UIViewController {
         let checkViewController = storyBoard.instantiateViewController(identifier: "checkView") as CheckViewController
         let alert = UIAlertController(title: "Bill it?", message: "", preferredStyle: .alert)
         let actionAlertYes = UIAlertAction(title: "Yes", style: .default) { [weak self] action  in
-            self?.navigationController?.pushViewController(checkViewController, animated: true)
-            checkViewController.checkInfo.name += self?.nameTxtField.text ?? "not data"
-            checkViewController.checkInfo.guests += self?.guestsTxtField.text ?? "not data"
-            checkViewController.checkInfo.table += self?.tableTxtField.text ?? "not data"
-            checkViewController.checkInfo.booked += (self?.switchChange(param: (self?.bookedSwitch)!))!
-            checkViewController.checkInfo.prepay += (self?.switchChange(param: (self?.prepaySwitch)!))!
-            checkViewController.checkInfo.vip += (self?.switchChange(param: (self?.vipSwitch)!))!
+            guard let self = self else {return }
+            self.navigationController?.pushViewController(checkViewController, animated: true)
+            guard let name = self.nameTxtField.text else { return }
+            checkViewController.checkInfo.name += name
+            guard let guests = self.guestsTxtField.text else { return }
+            checkViewController.checkInfo.guests += guests
+            guard let table = self.tableTxtField.text else { return }
+            checkViewController.checkInfo.table += table
+            checkViewController.checkInfo.booked += (self.switchChange(param: (self.bookedSwitch)))
+            checkViewController.checkInfo.prepay += (self.switchChange(param: (self.prepaySwitch)))
+            checkViewController.checkInfo.vip += (self.switchChange(param: (self.vipSwitch)))
+            
         }
         
         let actionAlertCancel = UIAlertAction(title: "Cancel", style: .cancel)

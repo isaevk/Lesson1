@@ -22,7 +22,7 @@ final class CheckViewController: UIViewController {
     @IBOutlet private var txtVip: UILabel!
     
 
-    var checkInfo = CheckInfo()
+    var checkInfo = CheckInfo(name: "Full name: " , guests: "Number of guests: ", table: "Number of table: ", booked: "Booked? -  ", prepay: "Prepayment? - ", vip: "VIP room? - ")
     
     
     override func viewDidLoad() {

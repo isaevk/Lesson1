@@ -5,14 +5,13 @@
 //  Created by Kirill Dev on 12.12.2022.
 //
 
-import Foundation
 import UIKit
 
 struct CheckInfo {
-    var name = "Full name: "
-    var guests = "Number of guests: "
-    var table = "Number of table: "
-    var booked = "Booked? - "
-    var prepay = "Prepayment? - "
-    var vip = "VIP room? - "
+    var name: String
+    var guests: String
+    var table: String
+    var booked: String
+    var prepay: String
+    var vip: String
 }
