@@ -17,11 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
        let nav1 = UINavigationController()
        let mainView = LogInVC(nibName: nil, bundle: nil) 
        nav1.viewControllers = [mainView]
-       self.window!.rootViewController = nav1
+       self.window?.rootViewController = nav1
        self.window?.makeKeyAndVisible()
        return true
     }
-
-
 }
 

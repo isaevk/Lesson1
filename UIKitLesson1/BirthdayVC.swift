@@ -34,91 +34,79 @@ final class BirthdayVC: UIViewController {
     
     private let thirdBirthInfo = UILabel()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setViewParameters()
     }
-    
     
     private func setViewParameters() {
         view.backgroundColor = .white
         navigationController?.navigationBar.tintColor = .systemPink
         title = "Birthday"
         newContactItem()
-        firstContact()
-        secondContact()
-        thirdContact()
+        labelsImageFirstContactSetup()
+        labelsImageSecondContactSetup()
+        labelsImageThirdContactSetup()
     }
     
     // MARK: - first Contact
-    private func firstContact() {
+    private func labelsImageFirstContactSetup() {
         firstImage.image = UIImage(named: "contact")
         firstImage.frame = CGRect(x: 5, y: 130, width: 80, height: 80)
-        view.addSubview(firstImage)
         
         firstName.text = "Jeremy"
         firstName.font = .boldSystemFont(ofSize: 20)
         firstName.frame = CGRect(x: 80, y: 140, width: 80, height: 20)
-        view.addSubview(firstName)
         
         firstBirthInfo.text = "March 10 will be 25 years old on Wed."
         firstBirthInfo.textColor = .systemGray
         firstBirthInfo.font = .systemFont(ofSize: 15)
         firstBirthInfo.frame = CGRect(x: 80, y: 175, width: 300, height: 20)
-        view.addSubview(firstBirthInfo)
         
         firstDayAgo.text = "18 days"
         firstDayAgo.textColor = .systemGray
         firstDayAgo.frame = CGRect(x: 310, y: 140, width: 60, height: 20)
-        view.addSubview(firstDayAgo)
+        [firstImage, firstName, firstBirthInfo, firstDayAgo].forEach { view.addSubview($0) }
     }
     
     // MARK: - second Contact
-    private func secondContact() {
+    private func labelsImageSecondContactSetup() {
         secondImage.image = UIImage(named: "contact")
         secondImage.frame = CGRect(x: 5, y: 240, width: 80, height: 80)
-        view.addSubview(secondImage)
         
         secondName.text = "Maria Lui"
         secondName.font = .boldSystemFont(ofSize: 20)
         secondName.frame = CGRect(x: 80, y: 250, width: 100, height: 20)
-        view.addSubview(secondName)
         
         secondBirthInfo.text = "March 30 will be 20 years old on Thu."
         secondBirthInfo.textColor = .systemGray
         secondBirthInfo.font = .systemFont(ofSize: 15)
         secondBirthInfo.frame = CGRect(x: 80, y: 280, width: 300, height: 20)
-        view.addSubview(secondBirthInfo)
         
         secondDayAgo.text = "28 days"
         secondDayAgo.textColor = .systemGray
         secondDayAgo.frame = CGRect(x: 310, y: 250, width: 70, height: 20)
-        view.addSubview(secondDayAgo)
+        [secondImage, secondName, secondBirthInfo, secondDayAgo].forEach { view.addSubview($0) }
     }
     
     // MARK: - third Contact
-    private func thirdContact() {
+    private func labelsImageThirdContactSetup() {
         thirdImage.image = UIImage(named: "contact")
         thirdImage.frame = CGRect(x: 5, y: 350, width: 80, height: 80)
-        view.addSubview(thirdImage)
         
         thirdName.text = "Jony Stark"
         thirdName.font = .boldSystemFont(ofSize: 20)
         thirdName.frame = CGRect(x: 80, y: 360, width: 100, height: 20)
-        view.addSubview(thirdName)
         
         thirdBirthInfo.text = "April 20 will be 31 years old on Sat."
         thirdBirthInfo.textColor = .systemGray
         thirdBirthInfo.font = .systemFont(ofSize: 15)
         thirdBirthInfo.frame = CGRect(x: 80, y: 390, width: 300, height: 20)
-        view.addSubview(thirdBirthInfo)
         
         thirdDayAgo.text = "53 days"
         thirdDayAgo.textColor = .systemGray
         thirdDayAgo.frame = CGRect(x: 310, y: 360, width: 70, height: 20)
-        view.addSubview(thirdDayAgo)
-        
+        [thirdImage, thirdName, thirdBirthInfo, thirdDayAgo].forEach { view.addSubview($0) }
     }
     
     // MARK: - Go to AddNewContactVC
@@ -127,9 +115,7 @@ final class BirthdayVC: UIViewController {
     }
     
     @objc private func addTapped() {
-        navigationController?.modalPresentationStyle = .overCurrentContext
-        navigationController?.pushViewController(AddNewContactVC(), animated: true)
-        navigationController?.modalPresentationStyle = .overCurrentContext
+        let vc = AddNewContactVC()
+        navigationController?.pushViewController(vc, animated: true)
     }
-    
 }

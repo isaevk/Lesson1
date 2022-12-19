@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		18B669D7294B6A6200095ACF /* BorderOfUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B669D6294B6A6200095ACF /* BorderOfUITextField.swift */; };
+		1851F14E295050F900A87B5D /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1851F14D295050F900A87B5D /* UIViewController+Extension.swift */; };
+		18B669D7294B6A6200095ACF /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B669D6294B6A6200095ACF /* UITextField+Extension.swift */; };
 		18D0B7C6294A2DDD00491304 /* AddNewContactVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D0B7C5294A2DDD00491304 /* AddNewContactVC.swift */; };
 		18D0B7C8294A2E3400491304 /* BirthdayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D0B7C7294A2E3400491304 /* BirthdayVC.swift */; };
 		BD505D84293F59580041DC37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD505D83293F59580041DC37 /* AppDelegate.swift */; };
@@ -17,7 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		18B669D6294B6A6200095ACF /* BorderOfUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderOfUITextField.swift; sourceTree = "<group>"; };
+		1851F14D295050F900A87B5D /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		18B669D6294B6A6200095ACF /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		18D0B7C5294A2DDD00491304 /* AddNewContactVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewContactVC.swift; sourceTree = "<group>"; };
 		18D0B7C7294A2E3400491304 /* BirthdayVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayVC.swift; sourceTree = "<group>"; };
 		BD505D80293F59580041DC37 /* UIKitLesson1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKitLesson1.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,7 +71,8 @@
 				BD505D87293F59580041DC37 /* LogInVC.swift */,
 				18D0B7C7294A2E3400491304 /* BirthdayVC.swift */,
 				18D0B7C5294A2DDD00491304 /* AddNewContactVC.swift */,
-				18B669D6294B6A6200095ACF /* BorderOfUITextField.swift */,
+				18B669D6294B6A6200095ACF /* UITextField+Extension.swift */,
+				1851F14D295050F900A87B5D /* UIViewController+Extension.swift */,
 				BD505D8C293F59590041DC37 /* Assets.xcassets */,
 				BD505D8E293F59590041DC37 /* LaunchScreen.storyboard */,
 				BD505D91293F59590041DC37 /* Info.plist */,
@@ -150,8 +153,9 @@
 			files = (
 				18D0B7C6294A2DDD00491304 /* AddNewContactVC.swift in Sources */,
 				BD505D88293F59580041DC37 /* LogInVC.swift in Sources */,
-				18B669D7294B6A6200095ACF /* BorderOfUITextField.swift in Sources */,
+				18B669D7294B6A6200095ACF /* UITextField+Extension.swift in Sources */,
 				BD505D84293F59580041DC37 /* AppDelegate.swift in Sources */,
+				1851F14E295050F900A87B5D /* UIViewController+Extension.swift in Sources */,
 				18D0B7C8294A2E3400491304 /* BirthdayVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

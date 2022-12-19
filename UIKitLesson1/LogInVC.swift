@@ -31,7 +31,6 @@ final class LogInVC: UIViewController {
     
     private let singButton = UIButton()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -50,9 +49,7 @@ final class LogInVC: UIViewController {
         faceIDSwitch()
         singInButton()
         eyeImageView()
-
     }
-    
     
     private func logoImage() {
         logImage.layer.borderWidth = 1
@@ -125,8 +122,6 @@ final class LogInVC: UIViewController {
         singButton.setTitle("Sing in", for: .normal)
         singButton.addTarget(self, action: #selector(pressButtonSing), for: .touchUpInside)
         view.addSubview(singButton)
-        
-        
     }
     
     // MARK: - Eye for password field
@@ -139,33 +134,25 @@ final class LogInVC: UIViewController {
         txtPassword.rightViewMode = .always
         eyeButton.alpha = 0.3
     }
+    
     @objc func togglePasswordView(_ sender: Any) {
         txtPassword.isSecureTextEntry.toggle()
         eyeButton.isSelected.toggle()
     }
     
     //MARK: - Check text field.count
-    private  func errorAlert(title: String, message: String, preferredStyle: UIAlertController.Style) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: preferredStyle)
-        let action = UIAlertAction(title: "Ok", style: .default)
-        alert.addAction(action)
-        present(alert, animated: true)
-    }
-    
     @objc private func pressButtonSing() {
         guard txtLogin.text?.count != 0 else {
-            errorAlert(title: "Sorry", message: "Please enter your e-mail", preferredStyle: .alert)
+            presentAlert(withTitle: "Sorry", message: "Please enter your e-mail")
             return
         }
         guard txtPassword.text?.count != 0 else {
-            errorAlert(title: "Sorry", message: "Please enter your password", preferredStyle: .alert)
+            presentAlert(withTitle: "Sorry", message: "Please enter your password")
             return
         }
-        navigationController?.pushViewController(BirthdayVC(), animated: true)
+        let vc = BirthdayVC()
+        navigationController?.pushViewController(vc, animated: true)
     }
-    
-    
-    
 }
 
 

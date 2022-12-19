@@ -10,38 +10,23 @@ import UIKit
 final class AddNewContactVC: UIViewController {
     
     private let age = Array(1...100)
-    
     private let gender = ["Male", "Female"]
     
     private let logoNewContact = UIImageView()
-    
-    private let changeImage = UIButton()
-    
+    private let changePhotoImage = UIButton()
     private let nameLabel = UILabel()
-    
     private let nameTxtField = UITextField()
-    
     private let dateLabel = UILabel()
-    
     private let dateTxtField = UITextField()
-    
     private let agePicker = UIPickerView()
-    
     private let ageLabel = UILabel()
-    
     private let ageTxtField = UITextField()
-    
     private let sexLabel = UILabel()
-    
     private let sexTxtField = UITextField()
-    
     private let sexPicker = UIPickerView()
-    
-    private let instLabel = UILabel()
-    
-    private let instTxtField = UITextField()
-    
-    private let instAlert = UIAlertController()
+    private let instagramLabel = UILabel()
+    let instagramTxtField = UITextField()
+    private let instagramAlert = UIAlertController()
     
     private lazy var datePicker: UIDatePicker = {
         let datePicker = UIDatePicker(frame: .infinite)
@@ -51,8 +36,6 @@ final class AddNewContactVC: UIViewController {
         return datePicker
     }()
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setViewParameters()
@@ -60,107 +43,98 @@ final class AddNewContactVC: UIViewController {
     
     private func setViewParameters() {
         view.backgroundColor = .white
-        logoImage()
-        changePhoto()
+        logoViewSetup()
+        changePhotoButtonSetup()
         addContactButton()
-        setName()
-        setDate()
-        setAge()
-        setSex()
-        setInst()
+        nameLabelNameTxtFieldSetup()
+        dateLabelDateTxtFieldSetup()
+        ageLabelAgeTxtFieldSetup()
+        sexLabelSexTxtFieldSetup()
+        instagramLabelInstagramTxtFieldSetup()
     }
     
-    
-    private func logoImage() {
+    private func logoViewSetup() {
         logoNewContact.image = UIImage(named: "new-contact")
         logoNewContact.frame = CGRect(x: 140, y: 150, width: 100, height: 100)
         view.addSubview(logoNewContact)
     }
     
-    private func changePhoto() {
-        changeImage.setTitle("Change photo", for: .normal)
-        changeImage.setTitleColor(.systemPink, for: .normal)
-        changeImage.frame = CGRect(x: 125, y: 255, width: 120, height: 20)
-        view.addSubview(changeImage)
+    private func changePhotoButtonSetup() {
+        changePhotoImage.setTitle("Change photo", for: .normal)
+        changePhotoImage.setTitleColor(.systemPink, for: .normal)
+        changePhotoImage.frame = CGRect(x: 125, y: 255, width: 120, height: 20)
+        view.addSubview(changePhotoImage)
     }
     
     // MARK: - Set Name
-    private func setName() {
+    private func nameLabelNameTxtFieldSetup() {
         nameLabel.text = "Name"
         nameLabel.textColor = .systemPink
         nameLabel.frame = CGRect(x: 30, y: 330, width: 50, height: 20)
-        view.addSubview(nameLabel)
         
         nameTxtField.placeholder = "Please enter name"
         nameTxtField.frame = CGRect(x: 30, y: 355, width: 300, height: 30)
         nameTxtField.addBottomBorder()
-        view.addSubview(nameTxtField)
+        [nameLabel, nameTxtField].forEach { view.addSubview($0) }
     }
     
     // MARK: - Set Date
-    private func setDate() {
+    private func dateLabelDateTxtFieldSetup() {
         dateLabel.text = "Date"
         dateLabel.textColor = .systemPink
         dateLabel.frame = CGRect(x: 30, y: 400, width: 50, height: 20)
-        view.addSubview(dateLabel)
         
         dateTxtField.frame = CGRect(x: 30, y: 425, width: 300, height: 30)
         dateTxtField.placeholder = "Please select a date"
         dateTxtField.addBottomBorder()
         dateTxtField.inputView = datePicker
-        view.addSubview(dateTxtField)
-        
         datePicker.addTarget(self, action: #selector(handleDatePicker(sender:)), for: .valueChanged)
+        [dateLabel, dateTxtField].forEach { view.addSubview($0) }
     }
     
-    
     // MARK: - Set Age
-    private func setAge() {
+    private func ageLabelAgeTxtFieldSetup() {
         ageLabel.text = "Age"
         ageLabel.textColor = .systemPink
         ageLabel.frame = CGRect(x:30 , y: 470, width: 50, height: 20)
-        view.addSubview(ageLabel)
         
         ageTxtField.placeholder = "Please select an age"
         ageTxtField.frame = CGRect(x: 30, y: 495, width: 300, height: 30)
         ageTxtField.addBottomBorder()
         ageTxtField.inputView = agePicker
-        view.addSubview(ageTxtField)
+        [ageTxtField, ageLabel].forEach { view.addSubview($0) }
         
         agePicker.delegate = self
         agePicker.dataSource = self
     }
     
     // MARK: - Set Sex
-    private func setSex() {
+    private func sexLabelSexTxtFieldSetup() {
         sexLabel.text = "Sex"
         sexLabel.textColor = .systemPink
         sexLabel.frame = CGRect(x: 30, y: 540, width: 50, height: 20)
-        view.addSubview(sexLabel)
         
         sexTxtField.placeholder = "Please select sex"
         sexTxtField.frame = CGRect(x: 30, y: 565, width: 300, height: 30)
         sexTxtField.addBottomBorder()
         sexTxtField.inputView = sexPicker
-        view.addSubview(sexTxtField)
+        [sexLabel, sexTxtField].forEach { view.addSubview($0) }
         
         sexPicker.delegate = self
         sexPicker.dataSource = self
     }
     
     // MARK: - Set Inst
-    private func setInst() {
-        instLabel.text = "Instagram"
-        instLabel.textColor = .systemPink
-        instLabel.frame = CGRect(x: 30, y: 610, width: 80, height: 20)
-        view.addSubview(instLabel)
+    private func instagramLabelInstagramTxtFieldSetup() {
+        instagramLabel.text = "Instagram"
+        instagramLabel.textColor = .systemPink
+        instagramLabel.frame = CGRect(x: 30, y: 610, width: 80, height: 20)
         
-        instTxtField.placeholder = "Add Instagram"
-        instTxtField.frame = CGRect(x: 30, y: 635, width: 300, height: 30)
-        instTxtField.addBottomBorder()
-        instTxtField.addTarget(self, action: #selector(addInst), for: .touchDown)
-        view.addSubview(instTxtField)
-        
+        instagramTxtField.placeholder = "Add Instagram"
+        instagramTxtField.frame = CGRect(x: 30, y: 635, width: 300, height: 30)
+        instagramTxtField.addBottomBorder()
+        instagramTxtField.addTarget(self, action: #selector(addInstagramAlert), for: .touchDown)
+        [instagramLabel, instagramTxtField].forEach { view.addSubview($0) }
     }
     
     // MARK: - Add date in dateUITextField
@@ -170,42 +144,26 @@ final class AddNewContactVC: UIViewController {
         dateTxtField.text = dateFormatter.string(from: sender.date)
     }
     
-    
     // MARK: - Add contact button + alert
     private func addContactButton() {
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addTapped))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(alertAddContactButton))
     }
     
-    @objc private func addTapped() {
-        let alert = UIAlertController(title: "Contact added", message: "", preferredStyle: .alert)
-        let action = UIAlertAction(title: "Ok", style: .default)
-        alert.addAction(action)
-        present(alert, animated: true)
+    @objc private func alertAddContactButton() {
+        presentAlert(withTitle: "Contact added", message: "")
     }
-    
     
     // MARK: - Add Instagramm for inst text field
-    @objc private func addInst() {
-        let alert = UIAlertController(title: "Enter username for Instagram", message: "", preferredStyle: .alert)
-        let actionCancel = UIAlertAction(title: "Cancel", style: .cancel)
-        let actionOk = UIAlertAction(title: "Ok", style: .default) { action in
-            self.instTxtField.text = alert.textFields?.first?.text
+    @objc private func addInstagramAlert() {
+        let saveText: (String?) -> () = { (textField: String?) in
+            self.instagramTxtField.text = textField
         }
-        
-        alert.addTextField() { textField in
-            textField.placeholder = "For example @alina_vetrova"
-            
-        }
-        alert.addAction(actionCancel)
-        alert.addAction(actionOk)
-        present(alert, animated: true)
+        instagramAlertShow(withTitle: "Enter username for Instagram", message: "", completion: saveText)
     }
 }
 
-
-
-// MARK: - UIPickerViewDataSource + UIPickerViewDelegate
-extension AddNewContactVC: UIPickerViewDataSource, UIPickerViewDelegate {
+// MARK: - UIPickerViewDataSource
+extension AddNewContactVC: UIPickerViewDataSource {
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -229,6 +187,10 @@ extension AddNewContactVC: UIPickerViewDataSource, UIPickerViewDelegate {
         }
         return ""
     }
+}
+
+// MARK: - UIPickerViewDelegate
+extension AddNewContactVC: UIPickerViewDelegate {
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if pickerView == agePicker {
@@ -238,10 +200,5 @@ extension AddNewContactVC: UIPickerViewDataSource, UIPickerViewDelegate {
             sexTxtField.text = gender[row]
             sexTxtField.resignFirstResponder()
         }
-        
     }
 }
-
-
-
-
