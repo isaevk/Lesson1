@@ -7,19 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1851F1502951BE1300A87B5D /* AudioPlayerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1851F14F2951BE1300A87B5D /* AudioPlayerVC.swift */; };
+		1851F1562951C72800A87B5D /* audio1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1851F1532951C72800A87B5D /* audio1.mp3 */; };
+		1851F1572951C72800A87B5D /* audio2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1851F1542951C72800A87B5D /* audio2.mp3 */; };
+		1851F1582951C72800A87B5D /* audio3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1851F1552951C72800A87B5D /* audio3.mp3 */; };
 		BD505D84293F59580041DC37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD505D83293F59580041DC37 /* AppDelegate.swift */; };
 		BD505D86293F59580041DC37 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD505D85293F59580041DC37 /* SceneDelegate.swift */; };
-		BD505D88293F59580041DC37 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD505D87293F59580041DC37 /* ViewController.swift */; };
+		BD505D88293F59580041DC37 /* PlistVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD505D87293F59580041DC37 /* PlistVC.swift */; };
 		BD505D8B293F59580041DC37 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD505D89293F59580041DC37 /* Main.storyboard */; };
 		BD505D8D293F59590041DC37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD505D8C293F59590041DC37 /* Assets.xcassets */; };
 		BD505D90293F59590041DC37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD505D8E293F59590041DC37 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1851F14F2951BE1300A87B5D /* AudioPlayerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerVC.swift; sourceTree = "<group>"; };
+		1851F1532951C72800A87B5D /* audio1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = audio1.mp3; path = ../../../Downloads/audio1.mp3; sourceTree = "<group>"; };
+		1851F1542951C72800A87B5D /* audio2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = audio2.mp3; path = ../../../Downloads/audio2.mp3; sourceTree = "<group>"; };
+		1851F1552951C72800A87B5D /* audio3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = audio3.mp3; path = ../../../Downloads/audio3.mp3; sourceTree = "<group>"; };
 		BD505D80293F59580041DC37 /* UIKitLesson1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKitLesson1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD505D83293F59580041DC37 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BD505D85293F59580041DC37 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BD505D87293F59580041DC37 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BD505D87293F59580041DC37 /* PlistVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlistVC.swift; sourceTree = "<group>"; };
 		BD505D8A293F59580041DC37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BD505D8C293F59590041DC37 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BD505D8F293F59590041DC37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -37,6 +45,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1851F1512951BE8E00A87B5D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BD505D83293F59580041DC37 /* AppDelegate.swift */,
+				BD505D85293F59580041DC37 /* SceneDelegate.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		1851F1522951C37000A87B5D /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				1851F1532951C72800A87B5D /* audio1.mp3 */,
+				1851F1542951C72800A87B5D /* audio2.mp3 */,
+				1851F1552951C72800A87B5D /* audio3.mp3 */,
+			);
+			path = Audio;
+			sourceTree = "<group>";
+		};
 		BD505D77293F59580041DC37 = {
 			isa = PBXGroup;
 			children = (
@@ -56,13 +83,14 @@
 		BD505D82293F59580041DC37 /* UIKitLesson1 */ = {
 			isa = PBXGroup;
 			children = (
-				BD505D83293F59580041DC37 /* AppDelegate.swift */,
-				BD505D85293F59580041DC37 /* SceneDelegate.swift */,
-				BD505D87293F59580041DC37 /* ViewController.swift */,
+				BD505D87293F59580041DC37 /* PlistVC.swift */,
+				1851F14F2951BE1300A87B5D /* AudioPlayerVC.swift */,
 				BD505D89293F59580041DC37 /* Main.storyboard */,
 				BD505D8C293F59590041DC37 /* Assets.xcassets */,
 				BD505D8E293F59590041DC37 /* LaunchScreen.storyboard */,
 				BD505D91293F59590041DC37 /* Info.plist */,
+				1851F1522951C37000A87B5D /* Audio */,
+				1851F1512951BE8E00A87B5D /* Resources */,
 			);
 			path = UIKitLesson1;
 			sourceTree = "<group>";
@@ -127,7 +155,10 @@
 			files = (
 				BD505D90293F59590041DC37 /* LaunchScreen.storyboard in Resources */,
 				BD505D8D293F59590041DC37 /* Assets.xcassets in Resources */,
+				1851F1572951C72800A87B5D /* audio2.mp3 in Resources */,
+				1851F1582951C72800A87B5D /* audio3.mp3 in Resources */,
 				BD505D8B293F59580041DC37 /* Main.storyboard in Resources */,
+				1851F1562951C72800A87B5D /* audio1.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,8 +169,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BD505D88293F59580041DC37 /* ViewController.swift in Sources */,
+				BD505D88293F59580041DC37 /* PlistVC.swift in Sources */,
 				BD505D84293F59580041DC37 /* AppDelegate.swift in Sources */,
+				1851F1502951BE1300A87B5D /* AudioPlayerVC.swift in Sources */,
 				BD505D86293F59580041DC37 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
