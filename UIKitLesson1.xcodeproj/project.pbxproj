@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		18B6973B29533A5900DC9B3A /* PlayerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B6973A29533A5900DC9B3A /* PlayerVC.swift */; };
-		18B6973D29533E7800DC9B3A /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B6973C29533E7800DC9B3A /* UIButton+Extension.swift */; };
 		18B6973F29544A3100DC9B3A /* ModelSong.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B6973E29544A3100DC9B3A /* ModelSong.swift */; };
 		18B6974329544D0C00DC9B3A /* audio3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 18B6974029544D0C00DC9B3A /* audio3.mp3 */; };
 		18B6974429544D0C00DC9B3A /* audio2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 18B6974129544D0C00DC9B3A /* audio2.mp3 */; };
@@ -23,7 +22,6 @@
 
 /* Begin PBXFileReference section */
 		18B6973A29533A5900DC9B3A /* PlayerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerVC.swift; sourceTree = "<group>"; };
-		18B6973C29533E7800DC9B3A /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		18B6973E29544A3100DC9B3A /* ModelSong.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelSong.swift; sourceTree = "<group>"; };
 		18B6974029544D0C00DC9B3A /* audio3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = audio3.mp3; path = ../../../Downloads/audio3.mp3; sourceTree = "<group>"; };
 		18B6974129544D0C00DC9B3A /* audio2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = audio2.mp3; path = ../../../Downloads/audio2.mp3; sourceTree = "<group>"; };
@@ -49,13 +47,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1851F1512951BE8E00A87B5D /* Resources */ = {
+		1851F1512951BE8E00A87B5D /* Aplication */ = {
 			isa = PBXGroup;
 			children = (
 				BD505D83293F59580041DC37 /* AppDelegate.swift */,
 				BD505D85293F59580041DC37 /* SceneDelegate.swift */,
 			);
-			path = Resources;
+			path = Aplication;
 			sourceTree = "<group>";
 		};
 		1851F1522951C37000A87B5D /* Audio */ = {
@@ -66,6 +64,16 @@
 				18B6974029544D0C00DC9B3A /* audio3.mp3 */,
 			);
 			path = Audio;
+			sourceTree = "<group>";
+		};
+		18D28B01296BFF9800999165 /* Resources  */ = {
+			isa = PBXGroup;
+			children = (
+				BD505D89293F59580041DC37 /* Main.storyboard */,
+				BD505D8C293F59590041DC37 /* Assets.xcassets */,
+				BD505D8E293F59590041DC37 /* LaunchScreen.storyboard */,
+			);
+			path = "Resources ";
 			sourceTree = "<group>";
 		};
 		BD505D77293F59580041DC37 = {
@@ -90,13 +98,10 @@
 				BD505D87293F59580041DC37 /* PlistVC.swift */,
 				18B6973A29533A5900DC9B3A /* PlayerVC.swift */,
 				18B6973E29544A3100DC9B3A /* ModelSong.swift */,
-				18B6973C29533E7800DC9B3A /* UIButton+Extension.swift */,
-				BD505D89293F59580041DC37 /* Main.storyboard */,
-				BD505D8C293F59590041DC37 /* Assets.xcassets */,
-				BD505D8E293F59590041DC37 /* LaunchScreen.storyboard */,
 				BD505D91293F59590041DC37 /* Info.plist */,
+				18D28B01296BFF9800999165 /* Resources  */,
 				1851F1522951C37000A87B5D /* Audio */,
-				1851F1512951BE8E00A87B5D /* Resources */,
+				1851F1512951BE8E00A87B5D /* Aplication */,
 			);
 			path = UIKitLesson1;
 			sourceTree = "<group>";
@@ -179,7 +184,6 @@
 				BD505D84293F59580041DC37 /* AppDelegate.swift in Sources */,
 				18B6973F29544A3100DC9B3A /* ModelSong.swift in Sources */,
 				BD505D86293F59580041DC37 /* SceneDelegate.swift in Sources */,
-				18B6973D29533E7800DC9B3A /* UIButton+Extension.swift in Sources */,
 				18B6973B29533A5900DC9B3A /* PlayerVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
