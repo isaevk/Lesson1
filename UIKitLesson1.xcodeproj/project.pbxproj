@@ -7,29 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		18B6973B29533A5900DC9B3A /* PlayerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B6973A29533A5900DC9B3A /* PlayerVC.swift */; };
+		18B6973B29533A5900DC9B3A /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B6973A29533A5900DC9B3A /* PlayerViewController.swift */; };
 		18B6973F29544A3100DC9B3A /* ModelSong.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B6973E29544A3100DC9B3A /* ModelSong.swift */; };
 		18B6974329544D0C00DC9B3A /* audio3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 18B6974029544D0C00DC9B3A /* audio3.mp3 */; };
 		18B6974429544D0C00DC9B3A /* audio2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 18B6974129544D0C00DC9B3A /* audio2.mp3 */; };
 		18B6974529544D0C00DC9B3A /* audio1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 18B6974229544D0C00DC9B3A /* audio1.mp3 */; };
+		18D28B0F296D921200999165 /* ModelPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D28B0E296D921200999165 /* ModelPosition.swift */; };
 		BD505D84293F59580041DC37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD505D83293F59580041DC37 /* AppDelegate.swift */; };
 		BD505D86293F59580041DC37 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD505D85293F59580041DC37 /* SceneDelegate.swift */; };
-		BD505D88293F59580041DC37 /* PlistVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD505D87293F59580041DC37 /* PlistVC.swift */; };
+		BD505D88293F59580041DC37 /* PlistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD505D87293F59580041DC37 /* PlistViewController.swift */; };
 		BD505D8B293F59580041DC37 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD505D89293F59580041DC37 /* Main.storyboard */; };
 		BD505D8D293F59590041DC37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD505D8C293F59590041DC37 /* Assets.xcassets */; };
 		BD505D90293F59590041DC37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD505D8E293F59590041DC37 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		18B6973A29533A5900DC9B3A /* PlayerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerVC.swift; sourceTree = "<group>"; };
+		18B6973A29533A5900DC9B3A /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 		18B6973E29544A3100DC9B3A /* ModelSong.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelSong.swift; sourceTree = "<group>"; };
 		18B6974029544D0C00DC9B3A /* audio3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = audio3.mp3; path = ../../../Downloads/audio3.mp3; sourceTree = "<group>"; };
 		18B6974129544D0C00DC9B3A /* audio2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = audio2.mp3; path = ../../../Downloads/audio2.mp3; sourceTree = "<group>"; };
 		18B6974229544D0C00DC9B3A /* audio1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = audio1.mp3; path = ../../../Downloads/audio1.mp3; sourceTree = "<group>"; };
+		18D28B0E296D921200999165 /* ModelPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelPosition.swift; sourceTree = "<group>"; };
 		BD505D80293F59580041DC37 /* UIKitLesson1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKitLesson1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD505D83293F59580041DC37 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BD505D85293F59580041DC37 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BD505D87293F59580041DC37 /* PlistVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlistVC.swift; sourceTree = "<group>"; };
+		BD505D87293F59580041DC37 /* PlistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlistViewController.swift; sourceTree = "<group>"; };
 		BD505D8A293F59580041DC37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BD505D8C293F59590041DC37 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BD505D8F293F59590041DC37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -95,9 +97,10 @@
 		BD505D82293F59580041DC37 /* UIKitLesson1 */ = {
 			isa = PBXGroup;
 			children = (
-				BD505D87293F59580041DC37 /* PlistVC.swift */,
-				18B6973A29533A5900DC9B3A /* PlayerVC.swift */,
+				BD505D87293F59580041DC37 /* PlistViewController.swift */,
+				18B6973A29533A5900DC9B3A /* PlayerViewController.swift */,
 				18B6973E29544A3100DC9B3A /* ModelSong.swift */,
+				18D28B0E296D921200999165 /* ModelPosition.swift */,
 				BD505D91293F59590041DC37 /* Info.plist */,
 				18D28B01296BFF9800999165 /* Resources  */,
 				1851F1522951C37000A87B5D /* Audio */,
@@ -180,11 +183,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BD505D88293F59580041DC37 /* PlistVC.swift in Sources */,
+				BD505D88293F59580041DC37 /* PlistViewController.swift in Sources */,
 				BD505D84293F59580041DC37 /* AppDelegate.swift in Sources */,
 				18B6973F29544A3100DC9B3A /* ModelSong.swift in Sources */,
 				BD505D86293F59580041DC37 /* SceneDelegate.swift in Sources */,
-				18B6973B29533A5900DC9B3A /* PlayerVC.swift in Sources */,
+				18D28B0F296D921200999165 /* ModelPosition.swift in Sources */,
+				18B6973B29533A5900DC9B3A /* PlayerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,7 +11,7 @@
         <!--Music-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="PlistVC" customModule="UIKitLesson1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="PlistViewController" customModule="UIKitLesson1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -112,10 +112,10 @@
             </objects>
             <point key="canvasLocation" x="1064.885496183206" y="-23.239436619718312"/>
         </scene>
-        <!--PlayerVC-->
+        <!--Player View Controller-->
         <scene sceneID="3Zu-ky-hg8">
             <objects>
-                <viewController storyboardIdentifier="player" useStoryboardIdentifierAsRestorationIdentifier="YES" id="NyV-v6-tSl" customClass="PlayerVC" customModule="UIKitLesson1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="player" useStoryboardIdentifierAsRestorationIdentifier="YES" id="NyV-v6-tSl" customClass="PlayerViewController" customModule="UIKitLesson1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="o0J-Qx-gR0">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -125,7 +125,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="glo-xZ-6yp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1979.3893129770991" y="-23.239436619718312"/>
+            <point key="canvasLocation" x="1973" y="-23"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Y0o-h4-39F">

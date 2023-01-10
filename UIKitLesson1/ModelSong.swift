@@ -8,9 +8,14 @@
 import Foundation
 
 struct Song {
-    var name: String
-    var albumName: String
-    var artistName: String
-    var imageName: String
-    var trackName: String
+    // Название трека
+    let name: String
+    // Название альбома
+    let albumName: String
+    // Имя артиста
+    let artistName: String
+    // Обложка альбома
+    let imageName: String
+    // Имя трека в xcode
+    let trackName: String
 }

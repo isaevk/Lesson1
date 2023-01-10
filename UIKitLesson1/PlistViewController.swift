@@ -7,13 +7,13 @@
 
 import UIKit
 
-final class PlistVC: UIViewController {
+final class PlistViewController: UIViewController {
     
-    private var songs = [Song]()
+    private var arrayOfSongs = Position()
     
-    @IBOutlet weak var firstButton: UIButton!
-    @IBOutlet weak var secondButton: UIButton!
-    @IBOutlet weak var thirdButton: UIButton!
+    @IBOutlet private var firstButton: UIButton!
+    @IBOutlet private var secondButton: UIButton!
+    @IBOutlet private var thirdButton: UIButton!
     
     
     override func viewDidLoad() {
@@ -22,19 +22,19 @@ final class PlistVC: UIViewController {
     }
     
     private func configureSong() {
-        songs.append(Song(name: "In the dark",
+        arrayOfSongs.songs.append(Song(name: "In the dark",
                           albumName: "Exotica",
                           artistName: "Purple Disco Machine",
                           imageName: "cover1",
                           trackName: "audio1"))
         
-        songs.append(Song(name: "Running up that hill",
+        arrayOfSongs.songs.append(Song(name: "Running up that hill",
                           albumName: "Running up that hill",
                           artistName: "Burton",
                           imageName: "cover2",
                           trackName: "audio2"))
         
-        songs.append(Song(name: "I ain't worried ",
+        arrayOfSongs.songs.append(Song(name: "I ain't worried ",
                           albumName: "Top Gun: Maverick",
                           artistName: "OneRepublic",
                           imageName: "cover3",
@@ -54,11 +54,11 @@ final class PlistVC: UIViewController {
     }
     
     private func switchPlayerVC(position: Int) {
-        guard let vc = storyboard?.instantiateViewController(identifier: "player") as? PlayerVC else {
+        guard let vc = storyboard?.instantiateViewController(identifier: "player") as? PlayerViewController else {
             return
         }
-        vc.songs = songs
-        vc.position = position
+        vc.position.songs = arrayOfSongs.songs
+        vc.position.position = position
         present(vc, animated: true)
     }
 }

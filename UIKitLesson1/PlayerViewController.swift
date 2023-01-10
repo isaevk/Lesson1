@@ -8,23 +8,22 @@
 import UIKit
 import AVKit
 
-final class PlayerVC: UIViewController {
+final class PlayerViewController: UIViewController {
     
-    public var position: Int       = 0
-    public var songs: [Song]       = []
+    public var position = Position()
 
-    private var player             = AVAudioPlayer()
-    private let hideButton         = UIButton()
-    private let shareButton        = UIButton()
-    private let trackImageView     = UIImageView()
-    private let currentTimeLabel   = UILabel()
-    private let durationLabel      = UILabel()
-    private let albumTitleLabel    = UILabel()
-    private let trackTitleLabel    = UILabel()
-    private let authorTitleLabel   = UILabel()
+    private var player = AVAudioPlayer()
+    private let hideButton = UIButton()
+    private let shareButton = UIButton()
+    private let trackImageView = UIImageView()
+    private let currentTimeLabel = UILabel()
+    private let durationLabel = UILabel()
+    private let albumTitleLabel = UILabel()
+    private let trackTitleLabel = UILabel()
+    private let authorTitleLabel = UILabel()
     private let previosTrackButton = UIButton()
-    private let playPauseButton    = UIButton()
-    private let nextTrackButton    = UIButton()
+    private let playPauseButton = UIButton()
+    private let nextTrackButton = UIButton()
     
     private let currentTimeSlider: UISlider = {
         let slider = UISlider()
@@ -47,9 +46,9 @@ final class PlayerVC: UIViewController {
     }
     
     private func setupUI() {
-        [trackImageView, hideButton, shareButton, albumTitleLabel, trackTitleLabel, authorTitleLabel, currentTimeSlider, previosTrackButton, playPauseButton, nextTrackButton, currentTimeLabel, durationLabel].forEach{ view.addSubview($0) }
-        
-        [trackImageView, hideButton, shareButton, albumTitleLabel, trackTitleLabel, authorTitleLabel, currentTimeSlider, previosTrackButton, playPauseButton, nextTrackButton, currentTimeLabel, durationLabel].forEach{ $0.translatesAutoresizingMaskIntoConstraints = false }
+        [trackImageView, hideButton, shareButton, albumTitleLabel, trackTitleLabel, authorTitleLabel, currentTimeSlider, previosTrackButton, playPauseButton, nextTrackButton, currentTimeLabel, durationLabel].forEach{
+            view.addSubview($0)
+            $0.translatesAutoresizingMaskIntoConstraints = false }
         
         NSLayoutConstraint.activate([
             hideButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 20),
@@ -95,15 +94,15 @@ final class PlayerVC: UIViewController {
     }
     
     private func setupPlayer() {
-        let song = songs[position]
+        let song = position.songs[position.position]
         let audioPath = Bundle.main.path(forResource: song.trackName, ofType: "mp3")
         
         do {
             try AVAudioSession.sharedInstance().setMode(.default)
             try AVAudioSession.sharedInstance().setActive(true, options: .notifyOthersOnDeactivation)
             
-            guard let audioPath = audioPath else { return }
-            player = try AVAudioPlayer(contentsOf: URL(string: audioPath)!)
+            guard let audioPathURL = URL(string: audioPath!) else { return }
+            player = try AVAudioPlayer(contentsOf: audioPathURL)
             
             player.play()
             
@@ -113,17 +112,18 @@ final class PlayerVC: UIViewController {
         
         setButtons()
         
-        trackImageView.image  = UIImage(named: song.imageName)
-        albumTitleLabel.text  = song.albumName
-        trackTitleLabel.text  = song.name
+        trackImageView.image = UIImage(named: song.imageName)
+        albumTitleLabel.text = song.albumName
+        trackTitleLabel.text = song.name
         authorTitleLabel.text = song.artistName
         currentTimeLabel.text = "00:00"
-        durationLabel.text    = "--:--"
+        durationLabel.text = "--:--"
         [albumTitleLabel, trackTitleLabel, authorTitleLabel].forEach{ $0.font = .boldSystemFont(ofSize: 20)}
     }
     
     private func setButtons() {
-        hideButton.setImage(.init(systemName: "chevron.down"), for: .normal)
+        hideButton.setImage(UIImage(systemName: "chevron.down"), for: .normal)
+        hideButton.setImage(UIImage(systemName: "chevron.down"), for: .normal)
         hideButton.addTarget(self, action: #selector(dragDownButtonTapped), for: .touchUpInside)
         
         shareButton.setImage(UIImage(systemName: "square.and.arrow.up"), for: .normal)
@@ -141,7 +141,7 @@ final class PlayerVC: UIViewController {
         currentTimeSlider.addTarget(self, action: #selector(playbackSliderValueChanged), for: .valueChanged)
     }
     
-    @objc func playbackSliderValueChanged(_ playbackSlider: UISlider) {
+    @objc private func playbackSliderValueChanged(_ playbackSlider: UISlider) {
         player.currentTime = Double(currentTimeSlider.value) * player.duration
         updateTime()
     }
@@ -158,19 +158,19 @@ final class PlayerVC: UIViewController {
         }
     }
     
-    @objc func dragDownButtonTapped(_ sender: Any) {
+    @objc private func dragDownButtonTapped() {
         dismiss(animated: true)
     }
     
-    @objc func shareButtonTapped(_ sender: Any) {
+    @objc private func shareButtonTapped() {
         guard let image = UIImage(systemName: "bell"), let url = URL(string: "https://www.google.com") else { return }
         let activityVC = UIActivityViewController(activityItems: [image, url], applicationActivities: nil)
         present(activityVC, animated: true)
     }
     
-    @objc func previosTrack(_ sender: Any) {
-        if position > -1 {
-            position -= 1
+    @objc private func previosTrack(_ sender: Any) {
+        if position.position > -1 {
+            position.position -= 1
             player.stop()
             for subview in view.subviews {
                 subview.removeFromSuperview()
@@ -180,9 +180,9 @@ final class PlayerVC: UIViewController {
         }
     }
     
-    @objc func nextTrack(_ sender: Any) {
-        if position < (songs.count - 1) {
-            position += 1
+    @objc private func nextTrack() {
+        if position.position < (position.songs.count - 1) {
+            position.position += 1
             player.stop()
             for subview in view.subviews {
                 subview.removeFromSuperview()
@@ -192,21 +192,25 @@ final class PlayerVC: UIViewController {
         }
     }
     
-    @objc func playPouseAction(_ sender: Any) {
-        if player.isPlaying == true {
+    @objc private func playPouseAction() {
+        if player.isPlaying {
             player.pause()
             playPauseButton.setImage(UIImage(named: "play"), for: .normal)
             UIView.animate(withDuration: 0.2, animations: {
-                self.trackImageView.widthAnchor.constraint(equalToConstant: 300 - 20).isActive  = true
-                self.trackImageView.heightAnchor.constraint(equalToConstant: 300 - 20).isActive = true
+                NSLayoutConstraint.activate([
+                    self.trackImageView.widthAnchor.constraint(equalToConstant: 300 - 20),
+                    self.trackImageView.heightAnchor.constraint(equalToConstant: 300 - 20)
+                ])
             })
             
         } else {
             player.play()
             playPauseButton.setImage(UIImage(named: "pause"), for: .normal)
             UIView.animate(withDuration: 0.2, animations: {
-                self.trackImageView.widthAnchor.constraint(equalToConstant: 300).isActive  = true
-                self.trackImageView.heightAnchor.constraint(equalToConstant: 300).isActive = true
+                NSLayoutConstraint.activate([
+                    self.trackImageView.widthAnchor.constraint(equalToConstant: 300),
+                    self.trackImageView.heightAnchor.constraint(equalToConstant: 300)
+                ])
             })
         }
     }
